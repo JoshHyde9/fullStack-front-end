@@ -1,0 +1,14 @@
+.parallax-container {
+  height: 100vh;
+}
+
+.tool-tip {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0%);
+}
+
+#opacity-bg {
+  background-color: rgba(#eee, 0.8);
+}
