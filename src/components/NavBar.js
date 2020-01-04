@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 // Styles
 import M from "materialize-css";
 
+// Img
+import Logo from "../img/NASA-logo.svg";
+
 export default class NavBar extends Component {
   componentDidMount() {
     M.AutoInit();
@@ -14,11 +17,11 @@ export default class NavBar extends Component {
       <>
         <nav>
           <div className="nav-wrapper grey darken-4">
-            <Link href="#" data-target="mobile-nav" class="sidenav-trigger">
-              <i class="material-icons">menu</i>
+            <Link to="#" data-target="mobile-nav" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
             </Link>
             <Link to="/" className="brand-logo">
-              Logo
+              <img src={Logo} alt="NASA logo" />
             </Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
@@ -31,7 +34,7 @@ export default class NavBar extends Component {
           </div>
         </nav>
 
-        <ul class="sidenav" id="mobile-nav">
+        <ul className="sidenav" id="mobile-nav">
           <li>
             <Link to="/">Home</Link>
           </li>
