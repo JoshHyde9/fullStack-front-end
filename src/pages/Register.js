@@ -34,7 +34,7 @@ export default class Register extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const API_URL = "http://localhost:5000/api/v1";
+    const API_URL = "https://enigmatic-fjord-24728.herokuapp.com/api/v1";
 
     fetch(`${API_URL}/users/register`, {
       method: "POST",
