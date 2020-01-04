@@ -25,7 +25,7 @@ export default class Home extends Component {
               the National Advisory Committee for Aeronautics.
             </p>
             <p>
-              This site gets and disaplys some of NASA's public data via NASA's
+              This site gets and displays some of NASA's public data via NASA's
               API in an easy to read and convient way.
             </p>
           </div>
