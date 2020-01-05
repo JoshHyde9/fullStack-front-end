@@ -3,14 +3,11 @@ import React, { Component } from "react";
 // Materialize JS
 import M from "materialize-css";
 
-// NASA API Key
-const NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
+const API_URL = `https://enigmatic-fjord-24728.herokuapp.com/api/v1/nasa/apod`;
 
 export default class APOD extends Component {
   componentDidMount() {
     M.AutoInit();
-
-    const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`;
 
     fetch(API_URL)
       .then(res => {
@@ -42,14 +39,18 @@ export default class APOD extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const DATE_API_URL = `https://api.nasa.gov/planetary/apod?date=${this.state.datepicker}&api_key=${NASA_API_KEY}`;
-
-    fetch(DATE_API_URL)
-      .then(res => {
-        return res.json();
+    fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ datepicker: this.state.datepicker })
+    })
+      .then(result => {
+        return result.json();
       })
       .then(data => {
-        this.setState(data);
+        return this.setState(data);
       })
       .catch(error => {
         console.error(error);
@@ -78,7 +79,6 @@ export default class APOD extends Component {
           <div className="container">
             <div className="row">
               <div className="input-field col xl6 s12">
-                <label htmlFor="date">Or pick your own day: </label>
                 <input
                   name="apodDate"
                   type="date"
@@ -87,6 +87,7 @@ export default class APOD extends Component {
                   value={this.state.datepicker}
                   onChange={this.handleChange}
                 />
+                <label htmlFor="date">Or pick your own day: </label>
               </div>
             </div>
             <div className="row">
