@@ -87,7 +87,7 @@ export default class APOD extends Component {
                   value={this.state.datepicker}
                   onChange={this.handleChange}
                 />
-                <label htmlFor="date">Or pick your own day: </label>
+                <span class="helper-text">Or select your own day:</span>
               </div>
             </div>
             <div className="row">
