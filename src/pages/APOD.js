@@ -65,7 +65,7 @@ export default class APOD extends Component {
         </h1>
         <div className="row container">
           <div className="col xl6 s12">
-            <img className="responsive-img" src={this.state.hdurl} alt="" />
+            <img className="responsive-img" src={this.state.url} alt="" />
           </div>
           <div className="col xl6 s12">
             <h2 className="header center-align">{this.state.title}</h2>
