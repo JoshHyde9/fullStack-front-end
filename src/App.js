@@ -12,6 +12,9 @@ import NavBar from "./components/NavBar";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import Apod from "./pages/APOD";
+import Insight from "./pages/Insight";
+import MarsRoverPhotos from "./pages/MarsRoverPhotos";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
+        <Route exact path="/apod" component={Apod} />
+        <Route exact path="/insight" component={Insight} />
+        <Route exact path="/mars-rover-photos" component={MarsRoverPhotos} />
       </Switch>
     </>
   );
