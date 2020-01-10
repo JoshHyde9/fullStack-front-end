@@ -72,6 +72,16 @@ export default class MarsRoverPhotos extends Component {
       <>
         <h1 className="header center-align">Mars Rover Photos</h1>
         <div className="container">
+          <ul className="collection">
+            <li className="collection-item">
+              <h6 className="header">Mars Rovers Active: </h6>
+            </li>
+            <li className="collection-item">Curiosity: 06/08/2012 - active</li>
+            <li className="collection-item">
+              Opportunity: 25/01/2004 - 11/06/2018
+            </li>
+            <li className="collection-item">Spirit: 04/01/2004 - 21/03/2010</li>
+          </ul>
           <div className="row">
             <form className="col s12" onSubmit={this.handleSubmit}>
               <div className="row">
@@ -113,6 +123,14 @@ export default class MarsRoverPhotos extends Component {
         </div>
 
         <div className="container">
+          {this.state.loading ? (
+            <h4 className="header center-align">
+              {marsRoverPhotos.length} images loaded!
+            </h4>
+          ) : (
+            ""
+          )}
+
           <div className="row">
             {marsRoverPhotos.map((photo, index) => {
               return (
