@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Apod from "./pages/APOD";
 import Insight from "./pages/Insight";
 import MarsRoverPhotos from "./pages/MarsRoverPhotos";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/apod" component={Apod} />
         <Route exact path="/insight" component={Insight} />
         <Route exact path="/mars-rover-photos" component={MarsRoverPhotos} />
+        <Route component={Error} />
       </Switch>
     </>
   );
